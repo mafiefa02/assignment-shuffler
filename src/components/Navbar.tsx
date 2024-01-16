@@ -5,7 +5,7 @@ import { Button, buttonVariants } from "./ui/button";
 
 const Navbar = () => {
   return (
-    <nav className="py-4 border-b">
+    <nav className="border-b py-4">
       <section className="container flex items-center justify-between">
         <Link
           href="/"
@@ -13,7 +13,7 @@ const Navbar = () => {
             buttonVariants({
               variant: "link",
             }),
-            "font-bold py-0 text-xl"
+            "py-0 text-xl font-bold",
           )}
         >
           shuffler;

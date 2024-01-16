@@ -26,7 +26,7 @@ export default function RootLayout({
       <body
         className={cn(
           fontSans.className,
-          "antialiased min-h-screen flex flex-col"
+          "flex min-h-screen flex-col antialiased",
         )}
       >
         <ThemeProvider
