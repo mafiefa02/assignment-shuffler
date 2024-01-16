@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import harmonyPalette from "@evilmartians/harmony/tailwind";
 
 const config = {
   darkMode: ["class"],
@@ -17,6 +18,7 @@ const config = {
         "2xl": "1400px",
       },
     },
+    colors: harmonyPalette,
     extend: {
       colors: {
         border: "hsl(var(--border))",
