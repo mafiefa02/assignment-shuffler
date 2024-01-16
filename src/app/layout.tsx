@@ -1,11 +1,15 @@
 import "./globals.css";
 
+import Navbar from "-/components/Navbar";
 import { ThemeProvider } from "-/components/providers/ThemeProvider";
 import { cn } from "-/lib/utils";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 import type { Metadata } from "next";
-const inter = Inter({ subsets: ["latin"] });
+const fontSans = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export const metadata: Metadata = {
   title: "Assignment Shuffler",
@@ -19,12 +23,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, "antialiased")}>
+      <body
+        className={cn(
+          fontSans.className,
+          "antialiased min-h-screen flex flex-col"
+        )}
+      >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
         >
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
