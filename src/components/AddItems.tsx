@@ -2,16 +2,22 @@
 
 import CustomInput from "-/components/CustomInput";
 import SubmitButton from "-/components/SubmitButton";
-import { addItems } from "-/lib/actions";
 import { cn } from "-/lib/utils";
 import { PlusIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useFormState } from "react-dom";
 
-const AddItems = () => {
+type fnType = (
+  fieldName: string,
+  currentParams: string,
+  currentState: { message: string } | null,
+  data: FormData,
+) => Promise<{ message: string }>;
+
+const AddItems = (props: { fn: fnType; name: string }) => {
   const params = useSearchParams();
-  const addItemsWithCurrentParams = addItems.bind(null, params.toString());
-  const [state, formAction] = useFormState(addItemsWithCurrentParams, null);
+  const fnWithParams = props.fn.bind(null, props.name, params.toString());
+  const [state, formAction] = useFormState(fnWithParams, null);
 
   const isError = !!state; // returns true if state is not null
   const error = isError && state.message; // if isError, returns the error message
@@ -26,7 +32,7 @@ const AddItems = () => {
       >
         <CustomInput
           placeholder="type in somethings"
-          name="item"
+          name={props.name}
           className={cn("w-full", isError && "border-destructive")}
         />
 

@@ -1,6 +1,7 @@
-import AddPerson from "-/components/AddPerson";
+import AddItems from "-/components/AddItems";
 import ListOfPerson from "-/components/ListOfPerson";
 import { Separator } from "-/components/ui/separator";
+import { addItems } from "-/lib/actions";
 
 function Person() {
   return (
@@ -21,7 +22,10 @@ function Person() {
         <ListOfPerson />
       </div>
 
-      <AddPerson />
+      <AddItems
+        fn={addItems}
+        name="person"
+      />
     </>
   );
 }

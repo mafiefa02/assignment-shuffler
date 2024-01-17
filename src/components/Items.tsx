@@ -1,6 +1,7 @@
 import AddItems from "-/components/AddItems";
 import ListOfItems from "-/components/ListOfItems";
 import { Separator } from "-/components/ui/separator";
+import { addItems } from "-/lib/actions";
 
 const Items = () => {
   return (
@@ -21,7 +22,10 @@ const Items = () => {
         <ListOfItems />
       </div>
 
-      <AddItems />
+      <AddItems
+        fn={addItems}
+        name="item"
+      />
     </>
   );
 };
