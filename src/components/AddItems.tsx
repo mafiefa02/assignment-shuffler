@@ -31,7 +31,7 @@ const AddItems = (props: { fn: fnType; name: string }) => {
         className="flex w-full items-center gap-4"
       >
         <CustomInput
-          placeholder="type in somethings"
+          placeholder="type in something"
           name={props.name}
           className={cn("w-full", isError && "border-destructive")}
         />
