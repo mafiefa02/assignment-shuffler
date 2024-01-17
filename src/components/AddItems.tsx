@@ -8,6 +8,8 @@ import { PlusIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useFormState } from "react-dom";
 
+import CustomInput from "./CustomInput";
+
 const AddItems = () => {
   const params = useSearchParams();
   const addItemsWithCurrentParams = addItems.bind(null, params.toString());
@@ -24,12 +26,14 @@ const AddItems = () => {
         action={formAction}
         className="flex w-full items-center gap-4"
       >
-        <Input
+        <CustomInput
+          placeholder="type in somethings"
           name="item"
           className={cn("w-full", isError && "border-destructive")}
         />
 
         <SubmitButton
+          tabIndex={-1}
           variant="ghost"
           size="icon"
         >
