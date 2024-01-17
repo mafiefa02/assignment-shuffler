@@ -3,12 +3,14 @@ import Person from "-/components/Person";
 import ResponsivePanelGroup from "-/components/ResponsivePanelGroup";
 import ShuffleResult from "-/components/ShuffleResult";
 import Socials from "-/components/Socials";
-import { Button } from "-/components/ui/button";
+import { Button, buttonVariants } from "-/components/ui/button";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "-/components/ui/resizable";
+import Link from "next/link";
+import { GrPowerReset } from "react-icons/gr";
 
 export default function Home() {
   return (
@@ -52,10 +54,23 @@ export default function Home() {
 
           <ShuffleResult />
 
-          <footer className="flex w-full items-center justify-between">
+          <footer className="flex w-full flex-col-reverse items-center justify-between gap-8 pb-8 sm:flex-row sm:pb-0">
             <Socials />
 
-            <Button>shuffle</Button>
+            <div className="flex w-full items-center gap-4 sm:w-auto">
+              <Link
+                href={"/"}
+                className={buttonVariants({
+                  variant: "outline",
+                  className: "group flex items-center gap-2",
+                })}
+              >
+                <span className="hidden sm:inline">reset </span>
+                <GrPowerReset className="shrink-0 group-hover:text-primary" />
+              </Link>
+
+              <Button className="w-full sm:w-auto">shuffle</Button>
+            </div>
           </footer>
         </div>
       </ResizablePanel>
