@@ -1,6 +1,6 @@
-import AddItems from "./AddItems";
-import ListOfItems from "./ListOfItems";
-import { Separator } from "./ui/separator";
+import AddItems from "-/components/AddItems";
+import ListOfItems from "-/components/ListOfItems";
+import { Separator } from "-/components/ui/separator";
 
 const Items = () => {
   return (

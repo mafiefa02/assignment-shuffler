@@ -1,6 +1,6 @@
-import AddPerson from "./AddPerson";
-import ListOfPerson from "./ListOfPerson";
-import { Separator } from "./ui/separator";
+import AddPerson from "-/components/AddPerson";
+import ListOfPerson from "-/components/ListOfPerson";
+import { Separator } from "-/components/ui/separator";
 
 function Person() {
   return (

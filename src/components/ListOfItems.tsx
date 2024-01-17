@@ -1,9 +1,8 @@
 "use client";
 
+import ItemCard from "-/components/ItemCard";
 import { separator } from "-/lib/constants";
 import { useSearchParams } from "next/navigation";
-
-import ItemCard from "./ItemCard";
 
 const ListOfItems = () => {
   const params = useSearchParams().get("item");

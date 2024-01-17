@@ -1,13 +1,12 @@
 "use client";
 
+import SubmitButton from "-/components/SubmitButton";
+import { Input } from "-/components/ui/input";
 import { addItems } from "-/lib/actions";
 import { cn } from "-/lib/utils";
 import { PlusIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useFormState } from "react-dom";
-
-import SubmitButton from "./SubmitButton";
-import { Input } from "./ui/input";
 
 const AddItems = () => {
   const params = useSearchParams();

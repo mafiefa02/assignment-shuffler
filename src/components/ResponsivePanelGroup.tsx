@@ -1,10 +1,9 @@
 "use client";
 
+import { ResizablePanelGroup } from "-/components/ui/resizable";
 import { cn } from "-/lib/utils";
 
 import { useWindowSize } from "@uidotdev/usehooks";
-
-import { ResizablePanelGroup } from "./ui/resizable";
 
 const ResponsivePanelGroup = (props: {
   children: React.ReactNode;

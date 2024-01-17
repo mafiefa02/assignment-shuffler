@@ -1,7 +1,6 @@
+import DeleteItemForm from "-/components/DeleteItemForm";
+import { Button } from "-/components/ui/button";
 import { TrashIcon } from "lucide-react";
-
-import DeleteItemForm from "./DeleteItemForm";
-import { Button } from "./ui/button";
 
 const ItemCard = (props: { item: string; index: number; name: string }) => {
   return (
