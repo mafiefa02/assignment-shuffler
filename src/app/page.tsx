@@ -1,46 +1,64 @@
+import Items from "-/components/Items";
+import Person from "-/components/Person";
+import ResponsivePanelGroup from "-/components/ResponsivePanelGroup";
+import ShuffleResult from "-/components/ShuffleResult";
+import Socials from "-/components/Socials";
 import { Button } from "-/components/ui/button";
-import { Input } from "-/components/ui/input";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "-/components/ui/resizable";
-import { Separator } from "-/components/ui/separator";
-import { PlusIcon } from "lucide-react";
 
 export default function Home() {
   return (
     <ResizablePanelGroup
-      className="flex-grow container"
-      direction="horizontal"
+      direction="vertical"
+      className="flex-grow"
     >
+      <ResizablePanel defaultSize={75}>
+        <ResponsivePanelGroup className="container w-full flex-grow">
+          <ResizablePanel
+            style={{ overflowY: "auto" }}
+            defaultSize={50}
+            className="container flex w-full flex-col items-start gap-6 py-8"
+          >
+            <Items />
+          </ResizablePanel>
+
+          <ResizableHandle withHandle />
+
+          <ResizablePanel
+            style={{ overflowY: "auto" }}
+            defaultSize={50}
+            className="container flex w-full flex-col items-start gap-6 py-8"
+          >
+            <Person />
+          </ResizablePanel>
+        </ResponsivePanelGroup>
+      </ResizablePanel>
+
+      <ResizableHandle withHandle />
+
       <ResizablePanel
-        defaultSize={35}
-        className="flex flex-col gap-6 py-8 px-4 w-full items-start"
+        style={{ overflowY: "auto" }}
+        className="container py-8"
+        defaultSize={25}
       >
-        <div className="flex flex-col gap-2">
-          <h1 className="text-2xl font-semibold">list of items;</h1>
-          <h4 className="font-sm text-muted-foreground">
-            please list all of the items u want to sort
-          </h4>
-        </div>
+        <div className="container flex h-full flex-col items-start gap-4">
+          <h1 className="text-xl font-semibold text-primary sm:text-2xl">
+            result;
+          </h1>
 
-        <Separator />
+          <ShuffleResult />
 
-        <div className="flex-grow flex flex-col gap-2">list is empty!</div>
+          <footer className="flex w-full items-center justify-between">
+            <Socials />
 
-        <div className="flex items-center gap-4 w-full">
-          <Input className="w-full" />
-          <Button>
-            <PlusIcon
-              size={20}
-              className="shrink-0"
-            />
-          </Button>
+            <Button>shuffle</Button>
+          </footer>
         </div>
       </ResizablePanel>
-      <ResizableHandle />
-      <ResizablePanel className="p-8">result will be here</ResizablePanel>
     </ResizablePanelGroup>
   );
 }
