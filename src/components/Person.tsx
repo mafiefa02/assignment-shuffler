@@ -1,5 +1,5 @@
 import AddItems from "-/components/AddItems";
-import ListOfPerson from "-/components/ListOfPerson";
+import ListOfItems from "-/components/ListOfItems";
 import { Separator } from "-/components/ui/separator";
 import { addItems } from "-/lib/actions";
 
@@ -19,7 +19,7 @@ function Person() {
       <Separator />
 
       <div className="w-full flex-grow space-y-2">
-        <ListOfPerson />
+        <ListOfItems name="person" />
       </div>
 
       <AddItems

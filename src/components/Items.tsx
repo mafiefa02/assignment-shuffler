@@ -19,7 +19,7 @@ const Items = () => {
       <Separator />
 
       <div className="w-full flex-grow space-y-2">
-        <ListOfItems />
+        <ListOfItems name="item" />
       </div>
 
       <AddItems

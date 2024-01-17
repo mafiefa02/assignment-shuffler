@@ -4,19 +4,19 @@ import ItemCard from "-/components/ItemCard";
 import { separator } from "-/lib/constants";
 import { useSearchParams } from "next/navigation";
 
-const ListOfItems = () => {
-  const params = useSearchParams().get("item");
-  const items = params?.split(separator);
+const ListOfItems = (props: { name: string }) => {
+  const params = useSearchParams().get(props.name);
+  const data = params?.split(separator);
 
-  if (!items) return "list is empty!";
+  if (!data) return "list is empty!";
 
   return (
     <>
-      {items.map((item, i) => (
+      {data.map((item, i) => (
         <ItemCard
           key={i}
           index={i}
-          name="item"
+          name={props.name}
           item={item}
         />
       ))}
