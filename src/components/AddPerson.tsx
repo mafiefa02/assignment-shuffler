@@ -1,14 +1,12 @@
 "use client";
 
+import CustomInput from "-/components/CustomInput";
 import SubmitButton from "-/components/SubmitButton";
-import { Input } from "-/components/ui/input";
 import { addPerson } from "-/lib/actions";
 import { cn } from "-/lib/utils";
 import { PlusIcon } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useFormState } from "react-dom";
-
-import CustomInput from "./CustomInput";
 
 const AddPerson = () => {
   const params = useSearchParams();
