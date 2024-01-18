@@ -8,7 +8,7 @@ function Person() {
     <>
       <div className="flex flex-col gap-2">
         <h1 className="text-xl font-semibold text-primary sm:text-2xl">
-          list of person;
+          list of people;
         </h1>
 
         <h4 className="text-sm text-muted-foreground">
