@@ -26,7 +26,6 @@ export async function addItems(
     ? params.get(fieldName) + separator
     : "";
   params.set(fieldName, prevSearch + itemsData.trim());
-  revalidatePath("/");
   return redirect("/?" + params.toString());
 }
 
@@ -47,7 +46,6 @@ export async function deleteItem(
   }
 
   params.set(paramsName, personParams.join(separator));
-  revalidatePath("/");
   return redirect("/?" + params.toString());
 }
 
@@ -74,6 +72,5 @@ export async function shuffleItems(
   }
 
   params.set("result", returnVal.join("\n"));
-  revalidatePath("/");
   return redirect("/?" + params.toString());
 }
