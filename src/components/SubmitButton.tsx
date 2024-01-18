@@ -13,7 +13,11 @@ const SubmitButton = (props: ButtonProps) => {
       disabled={pending}
       {...props}
     >
-      {pending ? <Loader2Icon className="shrink-0" /> : props.children}
+      {pending ? (
+        <Loader2Icon className="shrink-0 animate-spin" />
+      ) : (
+        props.children
+      )}
     </Button>
   );
 };
