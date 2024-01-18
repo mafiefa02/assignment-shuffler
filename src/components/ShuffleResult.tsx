@@ -4,7 +4,8 @@ import { useSearchParams } from "next/navigation";
 const ShuffleResult = ({ state }: { state: { message: string } | null }) => {
   const params = useSearchParams();
   const result = params.get("result")?.split("\n") ?? [
-    "result will be displayed here!",
+    "result is gonna be in the form of:",
+    "person: item x, item xx, item xxx",
   ];
 
   const isError = !!state;

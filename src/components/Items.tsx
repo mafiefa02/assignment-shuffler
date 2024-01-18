@@ -12,7 +12,7 @@ const Items = () => {
         </h1>
 
         <h4 className="text-sm text-muted-foreground">
-          please list all of the items u want to shuffle or assign
+          please list all of the things u want to shuffle or assign
         </h4>
       </div>
 

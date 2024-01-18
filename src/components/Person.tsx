@@ -12,7 +12,7 @@ function Person() {
         </h1>
 
         <h4 className="text-sm text-muted-foreground">
-          who are you going to shuffle the items to?
+          who/what are you going to shuffle the items to?
         </h4>
       </div>
 
