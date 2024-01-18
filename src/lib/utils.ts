@@ -25,13 +25,6 @@ export function assignNumbers(
   const totalAssignments = shuffledAssignments.length;
   const totalPeople = shuffledPeople.length;
 
-  if (totalPeople > totalAssignments) {
-    for (let i = totalAssignments; i < totalPeople; i++) {
-      const person = shuffledPeople[i % totalPeople];
-      mappedAssignments[person] = ["-"];
-    }
-  }
-
   for (let i = 0; i < totalAssignments; i++) {
     const person = shuffledPeople[i % totalPeople];
     const assignment = shuffledAssignments[i];
@@ -42,6 +35,13 @@ export function assignNumbers(
     } else {
       // Create a new assignments array for the person
       mappedAssignments[person] = [assignment];
+    }
+  }
+
+  if (totalPeople > totalAssignments) {
+    for (let i = totalAssignments; i < totalPeople; i++) {
+      const person = shuffledPeople[i % totalPeople];
+      mappedAssignments[person] = ["-"];
     }
   }
 
