@@ -50,7 +50,7 @@ export default function Home() {
         defaultSize={25}
       >
         <ResultForm className="container flex h-full flex-col items-start gap-4">
-          <footer className="flex w-full flex-col-reverse items-center justify-between gap-8 pb-8 sm:flex-row sm:pb-0">
+          <footer className="flex w-full flex-col-reverse items-center justify-between gap-8 pb-8 sm:flex-row">
             <Socials />
 
             <div className="flex w-full items-center gap-4 sm:w-auto">
