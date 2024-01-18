@@ -29,7 +29,11 @@ const Socials = () => {
         </Link>
       </div>
 
-      <p className="text-sm">&copy; {date.getFullYear()} Afief Abdurrahman</p>
+      <p className="text-sm">
+        &copy; {date.getFullYear()} Afief{" "}
+        <span className="sm:hidden lg:inline">Abdurrahman</span>{" "}
+        <span className="hidden sm:inline lg:hidden">A.</span>
+      </p>
     </div>
   );
 };

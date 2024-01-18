@@ -1,6 +1,7 @@
 "use server";
 
 import { separator } from "-/lib/constants";
+import { assignNumbers } from "-/lib/utils";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -46,6 +47,33 @@ export async function deleteItem(
   }
 
   params.set(paramsName, personParams.join(separator));
+  revalidatePath("/");
+  return redirect("/?" + params.toString());
+}
+
+export async function shuffleItems(
+  currentParams: string,
+  currentState: { message: string } | null,
+  data: FormData,
+) {
+  const params = new URLSearchParams(currentParams);
+  const items = params.get("item")?.split(separator);
+  const people = params.get("person")?.split(separator);
+
+  if (!items?.length && !people?.length)
+    return { message: "please add at least one item and one person!" };
+
+  if (!items?.length) return { message: "please add at least one item!" };
+  if (!people?.length) return { message: "please add at least one person!" };
+
+  const assignmentMapping = assignNumbers(people, items);
+
+  let returnVal = [];
+  for (const [person, assignment] of Object.entries(assignmentMapping)) {
+    returnVal.push(`${person}: ${assignment}`);
+  }
+
+  params.set("result", returnVal.join("\n"));
   revalidatePath("/");
   return redirect("/?" + params.toString());
 }

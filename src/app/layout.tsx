@@ -2,6 +2,7 @@ import "./globals.css";
 
 import Navbar from "-/components/Navbar";
 import { ThemeProvider } from "-/components/providers/ThemeProvider";
+import { Toaster } from "-/components/ui/sonner";
 import { cn } from "-/lib/utils";
 import { Poppins } from "next/font/google";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

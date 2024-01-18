@@ -1,9 +1,11 @@
+import CopyToClipboard from "-/components/CopyToClipboard";
 import Items from "-/components/Items";
 import Person from "-/components/Person";
 import ResponsivePanelGroup from "-/components/ResponsivePanelGroup";
-import ShuffleResult from "-/components/ShuffleResult";
+import ResultForm from "-/components/ResultForm";
 import Socials from "-/components/Socials";
-import { Button, buttonVariants } from "-/components/ui/button";
+import SubmitButton from "-/components/SubmitButton";
+import { buttonVariants } from "-/components/ui/button";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -47,13 +49,7 @@ export default function Home() {
         className="container py-8"
         defaultSize={25}
       >
-        <div className="container flex h-full flex-col items-start gap-4">
-          <h1 className="text-xl font-semibold text-primary sm:text-2xl">
-            result;
-          </h1>
-
-          <ShuffleResult />
-
+        <ResultForm className="container flex h-full flex-col items-start gap-4">
           <footer className="flex w-full flex-col-reverse items-center justify-between gap-8 pb-8 sm:flex-row sm:pb-0">
             <Socials />
 
@@ -65,14 +61,19 @@ export default function Home() {
                   className: "group flex items-center gap-2",
                 })}
               >
-                <span className="hidden sm:inline">reset </span>
+                <span className="hidden md:inline">reset </span>
                 <GrPowerReset className="shrink-0 group-hover:text-primary" />
               </Link>
 
-              <Button className="w-full sm:w-auto">shuffle</Button>
+              <CopyToClipboard
+                variant="outline"
+                className="group flex items-center gap-2"
+              />
+
+              <SubmitButton className="w-full sm:w-auto">shuffle</SubmitButton>
             </div>
           </footer>
-        </div>
+        </ResultForm>
       </ResizablePanel>
     </ResizablePanelGroup>
   );
