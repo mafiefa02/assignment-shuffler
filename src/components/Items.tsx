@@ -8,7 +8,7 @@ const Items = () => {
     <>
       <div className="flex flex-col gap-2">
         <h1 className="text-xl font-semibold text-primary sm:text-2xl">
-          list of items;
+          assignments;
         </h1>
 
         <h4 className="text-sm text-muted-foreground">
