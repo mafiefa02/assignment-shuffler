@@ -1,6 +1,8 @@
 import { buttonVariants } from "-/components/ui/button";
 import Link from "next/link";
 
+export const runtime = "edge";
+
 const AboutPage = () => {
   return (
     <main className="container flex min-h-[calc(100dvh-73px)] flex-col items-center justify-center gap-12 text-balance p-12">

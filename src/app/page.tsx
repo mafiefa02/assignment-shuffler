@@ -14,6 +14,8 @@ import {
 import Link from "next/link";
 import { GrPowerReset } from "react-icons/gr";
 
+export const runtime = "edge";
+
 export default function Home() {
   return (
     <ResizablePanelGroup

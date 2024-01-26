@@ -27,6 +27,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.8.5",
     "@csstools/postcss-oklab-function": "^3.0.9",
     "@types/node": "^20",
     "@types/react": "^18",
