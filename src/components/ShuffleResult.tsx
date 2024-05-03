@@ -20,7 +20,7 @@ const ShuffleResult = ({ state }: { state: { message: string } | null }) => {
       ) : (
         <ul>
           {result.map((value, i) => (
-            <li key={i}>{value}</li>
+            <li key={i}>{value.trim()}</li>
           ))}
         </ul>
       )}
