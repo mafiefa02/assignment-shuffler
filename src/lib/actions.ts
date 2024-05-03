@@ -73,11 +73,10 @@ export async function shuffleItems(
   );
 
   let returnVal = [];
-  for (const [person, assignment] of Object.entries(sortedAssignmentMapping)) {
-    returnVal.push(`${person}: ${assignment.join(", ")}`);
+  for (const [person, assignments] of Object.entries(sortedAssignmentMapping)) {
+    const sortedAssignments = assignments.sort((a, b) => a.localeCompare(b));
+    returnVal.push(`${person}: ${sortedAssignments.join(", ")}`);
   }
-
-  returnVal.sort();
 
   params.set("result", returnVal.join("\n"));
   return redirect("/?" + params.toString());
